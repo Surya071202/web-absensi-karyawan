@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Absensi Karyawan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistem Absensi Karyawan</h1>
+
+        <h2>Form Absensi</h2>
+        <form id="absensiForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Tanggal:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Waktu:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="photo">Foto:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <button type="submit">Submit Absensi</button>
+        </form>
+
+        <h2>Form Pengaduan</h2>
+        <form id="pengaduanForm">
+            <label for="complaintName">Nama:</label>
+            <input type="text" id="complaintName" name="complaintName" required>
+
+            <label for="complaintText">Pengaduan:</label>
+            <textarea id="complaintText" name="complaintText" rows="4" required></textarea>
+
+            <button type="submit">Submit Pengaduan</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('absensiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Absensi telah dikirim!');
+            // Logika untuk menyimpan data absensi ke backend server
+        });
+
+        document.getElementById('pengaduanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Pengaduan telah dikirim!');
+            // Logika untuk menyimpan data pengaduan ke backend server
+        });
+    </script>
+</body>
+</html>
